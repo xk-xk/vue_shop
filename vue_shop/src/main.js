@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import TreeTable from 'vue-table-with-tree-grid'
 import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
@@ -9,6 +10,9 @@ import './assets/fonts/iconfont.css'
 import './assets/css/global.css'
 
 Vue.config.productionTip = false
+
+// 注册全局 table 组件
+Vue.component('tree-table', TreeTable)
 
 // axios 配置
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'

@@ -1,11 +1,7 @@
 <template>
   <div>
     <!-- 面包屑导航区域 -->
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>权限管理</el-breadcrumb-item>
-      <el-breadcrumb-item>角色列表</el-breadcrumb-item>
-    </el-breadcrumb>
+    <Breadcrumb title="权限管理" subTitle="角色列表" />
 
     <el-card>
       <!-- 添加角色按钮区域 -->
@@ -133,7 +129,12 @@
 </template>
 
 <script>
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb.vue'
+
 export default {
+  components: {
+    Breadcrumb
+  },
   data() {
     return {
       rolesList: [],
