@@ -4,8 +4,8 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
-    '@vue/standard'
+    // 'plugin:vue/essential',
+    // '@vue/standard'
   ],
   parserOptions: {
     parser: 'babel-eslint'
@@ -16,6 +16,7 @@ module.exports = {
     "space-before-function-paren": 0,
     "no-unused-vars": 0,
     "indent": ["off", 2],
-    "quote-props": 0
+    "quote-props": 0,
+    "no-unused-vars": 'off'
   }
 }
