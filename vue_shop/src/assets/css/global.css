@@ -2,8 +2,8 @@
 html,
 body,
 #app {
-    height : 100%;
-    margin : 0;
+    height: 100%;
+    margin: 0;
     padding: 0;
     min-width: 1366px;
 }
@@ -19,12 +19,22 @@ body,
 
 .el-table {
     margin-top: 15px;
-    font-size : 12px;
+    font-size: 12px;
 }
 
 .el-pagination {
     margin-top: 15px;
 }
+
 .el-cascader-panel {
     height: 200px;
+}
+
+.el-steps {
+    margin: 15px 0;
+    width: 100%;
+}
+
+.el-step__title {
+    font-size: 13px;
 }
