@@ -46,6 +46,12 @@ export default {
       }
     }
   },
+  created() {
+    const token = window.sessionStorage.getItem('token')
+    if (token) {
+      this.$router.replace('/home')
+    }
+  },
   methods: {
     // 重置登录表单
     resetLoginForm() {

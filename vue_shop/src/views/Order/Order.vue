@@ -28,7 +28,7 @@
           <template slot-scope="scope">{{scope.row.create_time | dataFormat}}</template>
         </el-table-column>
         <el-table-column label="操作" width="130px">
-          <template slot-scope="scope">
+          <template>
             <el-button size="mini" icon="el-icon-edit" type="primary" @click="showEditAdressDialog"></el-button>
             <el-button
               size="mini"
