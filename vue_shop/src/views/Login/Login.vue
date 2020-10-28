@@ -6,9 +6,17 @@
         <img src="../../assets/image/logo.png" alt />
       </div>
       <!-- form表单 -->
-      <el-form class="login_form" :model="loginForm" :rules="rules" ref="loginFormRef">
+      <el-form
+        class="login_form"
+        :model="loginForm"
+        :rules="rules"
+        ref="loginFormRef"
+      >
         <el-form-item prop="username">
-          <el-input v-model="loginForm.username" prefix-icon="iconfont icon-user"></el-input>
+          <el-input
+            v-model="loginForm.username"
+            prefix-icon="iconfont icon-user"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input
@@ -31,44 +39,54 @@ export default {
   data() {
     return {
       loginForm: {
-        username: 'admin',
-        password: '123456'
+        username: "admin",
+        password: "123456"
       },
       rules: {
         username: [
-          { required: true, message: '请输入用户名！', trigger: 'blur' },
-          { min: 3, max: 10, message: '长度在 3 到 10 个字符！', trigger: 'blur' }
+          { required: true, message: "请输入用户名！", trigger: "blur" },
+          {
+            min: 3,
+            max: 10,
+            message: "长度在 3 到 10 个字符！",
+            trigger: "blur"
+          }
         ],
         password: [
-          { required: true, message: '请输入密码！', trigger: 'blur' },
-          { min: 6, max: 15, message: '长度在 6 到 15 个字符！', trigger: 'blur' }
+          { required: true, message: "请输入密码！", trigger: "blur" },
+          {
+            min: 6,
+            max: 15,
+            message: "长度在 6 到 15 个字符！",
+            trigger: "blur"
+          }
         ]
       }
-    }
+    };
   },
   created() {
-    const token = window.sessionStorage.getItem('token')
+    const token = window.sessionStorage.getItem("token");
     if (token) {
-      this.$router.replace('/home')
+      this.$router.replace("/home");
     }
   },
   methods: {
     // 重置登录表单
     resetLoginForm() {
-      this.$refs.loginFormRef.resetFields()
+      this.$refs.loginFormRef.resetFields();
     },
     login() {
       this.$refs.loginFormRef.validate(async valid => {
-        if (!valid) return
-        const { data: res } = await this.$http.post('login', this.loginForm)
-        if (res.meta.status !== 200) return this.$message.error('登录失败！')
-        this.$message.success('登录成功！')
-        window.sessionStorage.setItem('token', res.data.token)
-        this.$router.replace('/home')
-      })
+        if (!valid) return;
+        const { data: res } = await this.$http.post("login", this.loginForm);
+        if (res.meta.status !== 200) return this.$message.error("登录失败！");
+        this.$message.success("登录成功！");
+        window.sessionStorage.setItem("token", res.data.token);
+        this.$router.replace("/home");
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
